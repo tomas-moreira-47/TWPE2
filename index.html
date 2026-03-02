@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Académico Clínico dos Açores</title>
+    <!-- D3.js library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="background">
+<header>
+    <div class="container">
+        <p><img src="imagens/logotipo.png" alt="Logotipo da CACA" height="80"></p>
+        <ul class="nav">
+            <li><a href="#Missao">Missão</a></li>
+            <li><a href="#Area de investigacao">Área de investigação</a></li>
+            <li><a href="#Servicos">Serviços</a></li>
+            <li><a href="#Parceiros">Parceiros</a></li>
+            <li><a href="#Contactos">Contactos</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- MISSÃO + BOTÃO SABER MAIS -->
+    <div class="missao fade-in" id="missao1">
+        <h1 id="Missao">Missão</h1>
+        <p>O CACA tem como propósito melhorar a saúde e a assistência médica para os habitantes da região autónoma dos Açores através das suas investigações.</p>
+        <p id="extra-missao" style="display: none;">Além disso, colaboramos com instituições internacionais para trazer as melhores práticas e tecnologias para a região, promovendo a inovação e a excelência.</p>
+        <button id="saber-mais-btn" class="btn-saber-mais">Saber mais</button>
+    </div>
+
+    <div class="missao fade-in">
+        <h1>Visão</h1>
+        <p>Pretendemos ser uma referência na inovação médica. O nosso Centro pretende mostrar que a deslocalização não seja um obstáculo à excelência e ao esforço nos estudos e formações.</p>
+    </div>
+
+    <div class="missao fade-in">
+        <h1>Enquadramento na região</h1>
+        <p>O CACA nasce da necessidade de unir o Serviço Regional de Saúde e a Universidade dos Açores de modo a haver uma ligação mais efetiva entre as nossas ilhas, de modo a desenvolver uma melhor formação insular.</p>
+    </div>
+
+    <h1 id="Area de investigacao" class="investigacao">Área de investigação</h1>
+    <div class="content">
+        <div class="areas fade-in">
+            <h2>Telemedicina</h2>
+            <p>Prestação de serviços à distância permitindo consultas e acompanhamento médicos remotos.</p>
+        </div>
+        <div class="areas fade-in">
+            <h2>E-saúde</h2>
+            <p>Uso de tecnologias de informação e comunicação para obter diagnósticos mais aprimorados.</p>
+        </div>
+        <div class="areas fade-in">
+            <h2>IA em medicina</h2>
+            <p>A utilização de inteligência artificial para analisar dados clínicos permitindo diagnósticos rápidos.</p>
+        </div>
+        <div class="areas fade-in">
+            <h2>Epidemiologia</h2>
+            <p>A área de estudo sobre as doenças e a sua propagação. Focamo-nos na prevenção e controle destes problemas.</p>
+        </div>
+    </div>
+
+    <!-- GRÁFICO D3 -->
+    <section class="chart-section">
+        <h2>Produção Científica por Área</h2>
+        <div id="chart-container"></div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <div class="servicos_titulo">
+        <h1 id="Servicos">Serviços</h1>
+    </div>
+    <div class="servicos">
+        <div class="servicos_ensino fade-in">
+            <p>Ensino</p>
+        </div>
+        <div class="servicos_bolsas fade-in">
+            <p>Bolsas de investigação</p>
+        </div>
+    </div>
+
+    <br>
+    <h1 id="Parceiros">Parceiros</h1>
+    <div class="parceiros fade-in">
+        <img src="imagens/uni_coimbra_logo.png" alt="Logotipo da Universidade de Coimbra">
+        <img src="imagens/cuf_logo.png" alt="Logotipo da CUF">
+        <img src="imagens/uac_logo.png" alt="Logotipo da UAC">
+        <img src="imagens/coa_logo.png" alt="Logotipo da COA">
+    </div>
+    <br><br><br>
+
+    <!-- CONTACTOS + FORMULÁRIO MELHORADO -->
+    <h1 id="Contactos">Contactos</h1>
+    <div class="contactos">
+        <p><strong>Centro Académico Clínico dos Açores</strong>
+            <br><br>Telefone: 987654321
+            <br><br>Email: caca@azores.gov.pt
+            <br><br>Rua Clarimunda Nº 67
+            <br><br>Código-Postal:9500-567
+        </p>
+        <img src="imagens/smiguel.png" alt="Representação do CACA na ilha de São Miguel">
+        <div class="contactos_form">
+            <form method="post" action="#" id="contactForm" novalidate>
+                <legend>Contactar</legend>
+
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome" required>
+                <span class="error" id="error-nome" aria-live="polite"></span>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+                <span class="error" id="error-email" aria-live="polite"></span>
+
+                <label for="assunto">Assunto</label>
+                <select name="assunto" id="assunto" required>
+                    <option value="">Escolha uma opção</option>
+                    <option value="saude">Saúde</option>
+                    <option value="formacao">Formação</option>
+                    <option value="ensino">Ensino</option>
+                </select>
+                <span class="error" id="error-assunto" aria-live="polite"></span>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea name="mensagem" id="mensagem" rows="5" required></textarea>
+                <span class="error" id="error-mensagem" aria-live="polite"></span>
+
+                <div id="form-success" class="success" style="display:none;" role="alert">Mensagem enviada com sucesso!</div>
+
+                <p><input type="submit" value="Enviar"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="scroll-to-top" title="Voltar ao topo">↑</button>
+</main>
+
+<footer class="footer">
+    <div class="referencia">
+        <p>Centro Académico Clínico dos Açores</p>
+        <p>Universidade dos Açores</p>
+        <p>2º ano - Informática</p>
+    </div>
+    <div class="politicas">
+        <p>Direitos de Autor</p>
+        <a href="#" title="Privacidade e Termos em breve">Privacidade e Termos</a>
+    </div>
+</footer>
+
+<!-- JavaScript principal -->
+<script src="script.js"></script>
+</body>
+</html>
