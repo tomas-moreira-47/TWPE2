@@ -1,85 +1,8 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    // ------------------------------
-    // 1. GRÁFICO D3.js
-    // ------------------------------
-    function desenharGrafico() {
-        if (typeof d3 === 'undefined') {
-            console.warn('D3 não carregado');
-            return;
-        }
+    // ANIMAÇÃO SCROLL (FADE-IN)
 
-        // Dados fictícios: número de projetos por área
-        const dados = [
-            { area: 'Telemedicina', valor: 12 },
-            { area: 'E-saúde', valor: 8 },
-            { area: 'IA em medicina', valor: 15 },
-            { area: 'Epidemiologia', valor: 10 }
-        ];
-
-        // Dimensões
-        const largura = 600;
-        const altura = 300;
-        const margem = { top: 30, right: 30, bottom: 60, left: 50 };
-
-        const svg = d3.select('#chart-container')
-            .append('svg')
-            .attr('width', largura)
-            .attr('height', altura)
-            .style('display', 'block')
-            .style('margin', 'auto');
-
-        svg.append('title').text('Gráfico de barras: Produção científica por área. Telemedicina 12, E-saúde 8, IA em medicina 15, Epidemiologia 10');
-        // Escalas
-        const x = d3.scaleBand()
-            .domain(dados.map(d => d.area))
-            .range([margem.left, largura - margem.right])
-            .padding(0.2);
-
-        const y = d3.scaleLinear()
-            .domain([0, d3.max(dados, d => d.valor)])
-            .nice()
-            .range([altura - margem.bottom, margem.top]);
-
-        // Barras
-        svg.selectAll('.bar')
-            .data(dados)
-            .enter()
-            .append('rect')
-            .attr('class', 'bar')
-            .attr('x', d => x(d.area))
-            .attr('y', d => y(d.valor))
-            .attr('width', x.bandwidth())
-            .attr('height', d => altura - margem.bottom - y(d.valor))
-            .attr('fill', '#061D60')
-            .on('mouseenter', function () {
-                d3.select(this).attr('fill', '#3964e7');
-            })
-            .on('mouseleave', function () {
-                d3.select(this).attr('fill', '#061D60');
-            });
-
-        // Eixo X
-        svg.append('g')
-            .attr('transform', `translate(0, ${altura - margem.bottom})`)
-            .call(d3.axisBottom(x))
-            .selectAll('text')
-            .attr('transform', 'rotate(-20)')
-            .style('text-anchor', 'end')
-            .attr('class', 'axis-label');
-
-        // Eixo Y
-        svg.append('g')
-            .attr('transform', `translate(${margem.left}, 0)`)
-            .call(d3.axisLeft(y));
-    }
-    desenharGrafico();
-
-    // ------------------------------
-    // 2. ANIMAÇÃO SCROLL (FADE-IN)
-    // ------------------------------
     const elementosFade = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -91,9 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     elementosFade.forEach(el => observer.observe(el));
 
-    // ------------------------------
-    // 3. BOTÃO "SABER MAIS"
-    // ------------------------------
+    // BOTÃO "SABER MAIS"
     const btnSaberMais = document.getElementById('saber-mais-btn');
     const extraMissao = document.getElementById('extra-missao');
     if (btnSaberMais && extraMissao) {
@@ -108,9 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ------------------------------
-    // 4. BOTÃO "VOLTAR AO TOPO"
-    // ------------------------------
+    // BOTÃO "VOLTAR AO TOPO"
     const btnTopo = document.getElementById('scroll-to-top');
     window.addEventListener('scroll', function () {
         if (window.scrollY > 300) {
@@ -124,9 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ------------------------------
-    // 5. VALIDAÇÃO DO FORMULÁRIO
-    // ------------------------------
+    // VALIDAÇÃO DO FORMULÁRIO
     const form = document.getElementById('contactForm');
     const nome = document.getElementById('nome');
     const email = document.getElementById('email');
@@ -144,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     form.addEventListener('submit', function (e) {
-        e.preventDefault(); // impede envio real
+        e.preventDefault();
 
         let valido = true;
 
@@ -183,10 +100,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (valido) {
-            // Simulação de submissão bem-sucedida
+            // Submissão bem-sucedida
             successDiv.style.display = 'block';
-            form.reset(); // opcional: limpa os campos
-            // Esconder a mensagem de sucesso após 5 segundos (opcional)
+            form.reset();
             setTimeout(() => {
                 successDiv.style.display = 'none';
             }, 5000);
