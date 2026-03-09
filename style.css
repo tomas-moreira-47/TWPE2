@@ -300,6 +300,32 @@ footer p {
   padding: 1em;
 }
 
+.grafico-container {
+  text-align: center;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.grafico-container h2 {
+  color: #061D60;
+  margin-bottom: 1em;
+}
+
+#grafico-barras {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#grafico-barras text {
+  fill: #061D60;
+  font-family: sans-serif;
+}
+
 /* ========== MEDIA QUERIES (TABLET) ========== */
 @media (min-width: 768px) {
   .container {
@@ -448,10 +474,19 @@ footer p {
   .footer p {
     margin: 0;
   }
+
+  .grafico-container {
+    width: 80%;
+  }
 }
 
 /* ========== MEDIA QUERIES (DESKTOP) ========== */
 @media (min-width: 1020px) {
+
+  .grafico-container {
+    width: 70%;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;

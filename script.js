@@ -108,4 +108,67 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 5000);
         }
     });
+
+    // GRÁFICO D3
+    desenharGrafico();
+
 });
+
+function desenharGrafico() {
+    // Dados fictícios: número de projetos por área
+    const dados = [
+        { area: 'Telemedicina', valor: 8 },
+        { area: 'E-saúde', valor: 12 },
+        { area: 'IA em medicina', valor: 5 },
+        { area: 'Epidemiologia', valor: 10 }
+    ];
+
+    // Dimensões do gráfico
+    const largura = 600;
+    const altura = 300;
+    const margin = { top: 20, bottom: 50, left: 50, right: 20 };
+
+    // Seleciona o div e cria o SVG
+    const svg = d3.select("#grafico-barras")
+        .append("svg")
+        .attr("viewBox", `0 0 ${largura} ${altura}`)
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .style("width", "100%")
+        .style("height", "auto");
+
+    // Escalas
+    const x = d3.scaleBand()
+        .domain(dados.map(d => d.area))
+        .range([margin.left, largura - margin.right])
+        .padding(0.2);
+
+    const y = d3.scaleLinear()
+        .domain([0, d3.max(dados, d => d.valor)])
+        .nice()
+        .range([altura - margin.bottom, margin.top]);
+
+    // Barras
+    svg.selectAll("rect")
+        .data(dados)
+        .enter()
+        .append("rect")
+        .attr("x", d => x(d.area))
+        .attr("y", d => y(d.valor))
+        .attr("width", x.bandwidth())
+        .attr("height", d => y(0) - y(d.valor))
+        .attr("fill", "#3964e7")
+        .attr("rx", 4) // bordas arredondadas
+        .attr("ry", 4);
+
+    // Eixo X
+    svg.append("g")
+        .attr("transform", `translate(0, ${altura - margin.bottom})`)
+        .call(d3.axisBottom(x))
+        .style("font-size", "12px");
+
+    // Eixo Y
+    svg.append("g")
+        .attr("transform", `translate(${margin.left}, 0)`)
+        .call(d3.axisLeft(y))
+        .style("font-size", "12px");
+}
