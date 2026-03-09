@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .style('display', 'block')
             .style('margin', 'auto');
 
+        svg.append('title').text('Gráfico de barras: Produção científica por área. Telemedicina 12, E-saúde 8, IA em medicina 15, Epidemiologia 10');
         // Escalas
         const x = d3.scaleBand()
             .domain(dados.map(d => d.area))
