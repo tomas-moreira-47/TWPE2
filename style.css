@@ -1,779 +1,497 @@
+/* ========== ESTILOS BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header {
-  margin: 0;
-  background-color: rgb(255, 255, 255, 0.6);
-  color: #3964e7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    color: #3964e7;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .nav {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  margin: 0%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav li {
-  font-size: .85em;
-  padding: 0 1em;
-  color: #5d80e9;
-  text-decoration: none;
-}
-
-.nav li a:hover {
-  border-bottom: 2px solid #061D60;
+    font-size: 0.9rem;
 }
 
 .nav li a {
-  text-decoration: none;
-  color: #061D60;
-  font-weight: bold;
+    text-decoration: none;
+    color: #061D60;
+    font-weight: bold;
+    padding: 0.5rem;
+    transition: border-bottom 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav li a:hover {
+    border-bottom: 2px solid #061D60;
 }
 
 body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
 }
 
 .background {
-  background-image: url(imagens/imagem_recortada.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url(imagens/imagem_recortada.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 100vh;
+    width: 100%;
 }
 
 h1 {
-  display: flex;
-  font-size: 2em;
-  font-weight: bold;
-  justify-content: center;
-  flex-direction: row;
-  color: #061D60;
-  text-shadow: .1em .1em 1em whitesmoke;
+    display: flex;
+    font-size: 2em;
+    font-weight: bold;
+    justify-content: center;
+    flex-direction: row;
+    color: #061D60;
+    text-shadow: 0.1em 0.1em 1em whitesmoke;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
 }
 
 h2 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
+/* ========== SEÇÃO MISSÃO ========== */
 .missao {
-  margin: 4em;
-  background-color: rgb(255, 255, 255, 0.70);
-  border-radius: 14px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 2rem 1rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 14px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    padding: 1.5rem;
 }
 
 .missao:hover {
-  transform: scale(1.02);
-  filter: brightness(1.05);
+    transform: scale(1.02);
+    filter: brightness(1.05);
 }
 
 .missao h1 {
-  justify-content: flex-start;
-  padding-left: .5em;
-  padding-top: .5em;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #061D60;
+    justify-content: flex-start;
+    padding: 0 0 0.5rem 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #061D60;
 }
 
 .missao p {
-  justify-content: flex-start;
-  padding-left: 1.5em;
-  padding-bottom: 1.5em;
-  font-size: 0.75em;
-  color: #061D60;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    color: #061D60;
+    line-height: 1.5;
 }
 
+/* ========== ÁREAS DE INVESTIGAÇÃO ========== */
 .investigacao {
-  padding-top: 5em;
-  color: #061D60;
-  text-shadow: 5px 5px 10px white;
+    padding: 2rem 1rem 1rem;
+    color: #061D60;
+    text-shadow: 5px 5px 10px white;
+    font-size: 2rem;
 }
 
 .content {
-  padding-bottom: 0;
-  width: 100vw;
-  min-height: 50vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  gap: 20px;
+    width: 100%;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
 .areas {
-  background-color: #061D60;
-  box-shadow: 50%;
-  font-size: 1em;
-  color: #fff;
-  font-weight: bold;
-  margin: 10px;
-  border-radius: 10px;
-  width: 70vw;
-  height: 30vh;
-  box-shadow: .35em .35em .5em whitesmoke;
-  padding-bottom: 1.2em;
-  transition: transform 0.3s ease, filter 0.3s ease;
+    background-color: #061D60;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    min-height: 200px;
+    box-shadow: 0.35em 0.35em 0.5em rgba(255, 255, 255, 0.5);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .areas:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .areas p {
-  font-size: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
+    font-size: 1rem;
+    padding: 0;
+    line-height: 1.5;
 }
 
 .areas h2 {
-  padding-left: 0.5em;
+    padding: 0;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+/* ========== PARCEIROS ========== */
+#Parceiros {
+    scroll-margin-top: 80px;
 }
 
 .parceiros {
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 100%;
-  height: fit-content;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .parceiros img {
-  min-width: 20%;
-  max-width: 60%;
-  height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .parceiros img:hover {
-  transform: scale(1.1);
-  filter: brightness(1.15);
+    transform: scale(1.1);
+    filter: brightness(1.15);
+}
+
+/* ========== SERVIÇOS ========== */
+#Servicos {
+    scroll-margin-top: 80px;
 }
 
 .servicos {
-  width: 100vw;
-  height: 50vh;
-  display: flex;
-  justify-content: space-around;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
 .servicos_titulo {
-  display: flex;
-  font-size: 1em;
-  font-weight: bold;
-  justify-content: center;
-  flex-direction: row;
-  color: #061D60;
-  text-shadow: .1em .1em 1em whitesmoke;
+    display: flex;
+    font-size: 1em;
+    font-weight: bold;
+    justify-content: center;
+    flex-direction: row;
+    color: #061D60;
+    text-shadow: 0.1em 0.1em 1em whitesmoke;
+    padding: 1rem;
+}
+
+.servicos_ensino,
+.servicos_bolsas {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    box-shadow: 0.35em 0.35em 0.5em whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .servicos_ensino {
-  background-image: url(imagens/ensino.jpeg);
-  background-size: cover;
-  box-shadow: 50%;
-  font-size: 1em;
-  color: #ffff;
-  text-shadow: 1px 1px .5px #061D60;
-  margin: 2em;
-  border-radius: 10px;
-  width: 35vw;
-  height: 35vh;
-  box-shadow: .35em .35em .5em whitesmoke;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.servicos_ensino:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-.servicos_ensino p {
-  font-weight: bold;
-  font-size: 1.5em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(imagens/ensino.jpeg);
 }
 
 .servicos_bolsas {
-  background-image: url(imagens/bolsas.jpg);
-  background-size: cover;
-  box-shadow: 50%;
-  font-size: 1em;
-  color: #fff;
-  margin: 2em;
-  border-radius: 10px;
-  width: 35vw;
-  text-shadow: 1px 1px .5px #061D60;
-  height: 35vh;
-  box-shadow: .35em .35em .5em whitesmoke;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, filter 0.3s ease;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(imagens/bolsas.jpg);
 }
 
+.servicos_ensino:hover,
 .servicos_bolsas:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+    transform: scale(1.02);
+    filter: brightness(1.1);
 }
 
+.servicos_ensino p,
 .servicos_bolsas p {
-  font-weight: bold;
-  font-size: 1.5em;
-  padding-left: .5em;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ========== CONTACTOS ========== */
+#Contactos {
+    scroll-margin-top: 80px;
 }
 
 .contactos {
-  margin-left: 1.em;
-  margin-top: 5em;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .contactos p {
-  font-size: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50px;
-  padding: 20px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    line-height: 1.8;
 }
 
 .contactos img {
-  min-width: 10%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
 }
 
 .contactos_form {
-  background-color: #fff;
-  border-radius: 20px;
-  width: 80%;
-  padding: 2em;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
 }
 
-.contactos_form input[type=submit],
-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
+.contactos_form form {
+    width: 100%;
 }
 
-.contactos label {
-  padding-top: 20px;
+.contactos_form legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #061D60;
+    margin-bottom: 1rem;
 }
 
-.footer {
-  background-color: rgb(255, 255, 255, 0.65);
-  font-size: 1em;
-  color: #061D60;
-  margin: 0;
-  padding-top: 0.5em;
-  width: 100%;
+.contactos_form label {
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    color: #061D60;
 }
 
-footer p {
-  margin: 0;
+.contactos_form input[type=text],
+.contactos_form input[type=email],
+.contactos_form select,
+.contactos_form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-.referencia {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contactos_form input[type=text]:focus,
+.contactos_form input[type=email]:focus,
+.contactos_form select:focus,
+.contactos_form textarea:focus {
+    outline: none;
+    border-color: #061D60;
 }
 
-.politicas {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
+.contactos_form input[type=submit] {
+    background-color: #061D60;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
 }
 
+.contactos_form input[type=submit]:hover {
+    background-color: #3964e7;
+}
+
+/* ========== GRÁFICO ========== */
 .grafico-container {
-  text-align: center;
-  margin: 2em auto;
-  padding: 1em;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 14px;
-  width: 90%;
-  max-width: 800px;
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 14px;
+    width: 95%;
+    max-width: 900px;
 }
 
 .grafico-container h2 {
-  color: #061D60;
-  margin-bottom: 1em;
+    color: #061D60;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 #grafico-barras {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
 }
 
-#grafico-barras text {
-  fill: #061D60;
-  font-family: sans-serif;
+/* ========== FOOTER ========== */
+.footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    font-size: 0.9rem;
+    color: #061D60;
+    margin: 0;
+    padding: 1.5rem 1rem;
+    width: 100%;
 }
 
-/* ========== MEDIA QUERIES (TABLET) ========== */
-@media (min-width: 768px) {
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 0.75em;
-  }
-
-  .nav li {
-    font-size: 1em;
-    padding: 0 1em;
-    color: #061D60;
-    text-decoration: none;
-  }
-
-  h1 {
-    display: flex;
-    font-size: 2.5em;
-    font-weight: bold;
-    justify-content: center;
-    flex-direction: row;
-    color: #061D60;
-    text-shadow: .1em .1em 1em whitesmoke;
-  }
-
-  .missao p {
-    font-size: 1em;
-  }
-
-  .content {
-    padding-bottom: 0;
-    padding: 5px;
-    width: 100vw;
-    height: 50vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    justify-content: center;
-    gap: 30px;
-    height: auto;
-    padding: 40px 0;
-  }
-
-  .areas {
-    background-color: #061D60;
-    box-shadow: 50%;
-    font-size: 1em;
-    color: #fff;
-    font-weight: bold;
-    margin-left: 8em;
-    margin-right: 5em;
-    border-radius: 10px;
-    width: 25vw;
-    height: fit-content;
-    box-shadow: .35em .35em .5em whitesmoke;
-    padding-bottom: 1em;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .areas:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-  }
-
-  .parceiros {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 100%;
-    height: fit-content;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-  .parceiros img {
-    min-width: 20%;
-    max-width: 80%;
-    height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .parceiros img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.15);
-  }
-
-  .servicos {
-    padding-top: 3em;
-    width: 100vw;
-    height: 50vh;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .contactos {
-    margin: 2em 2em;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-
-  .contactos p {
-    font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    padding: 2em;
-  }
-
-  .contactos img {
-    min-width: 10%;
-    height: 15vh;
-    margin: 0 2em;
-  }
-
-  .contactos_form {
-    background-color: #fff;
-    border-radius: 20px;
-    max-width: max-content;
-    margin-right: 2em;
-    flex-basis: 100%;
-  }
-
-  .contactos_form input[type=submit],
-  label {
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-  }
-
-  .contactos label {
-    padding-top: 20px;
-  }
-
-  .footer {
-    background-color: rgb(255, 255, 255, 0.65);
-    font-size: 1em;
-    color: #061D60;
-    margin: 0;
-    padding-top: 0.75em;
-    width: 100%;
-  }
-
-  .footer p {
-    margin: 0;
-  }
-
-  .grafico-container {
-    width: 80%;
-  }
+footer p {
+    margin: 0.3rem 0;
 }
 
-/* ========== MEDIA QUERIES (DESKTOP) ========== */
-@media (min-width: 1020px) {
-
-  .grafico-container {
-    width: 70%;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 1em;
-  }
-
-  .missao p {
-    font-size: 1.25em;
-  }
-
-  .parceiros img {
-    min-width: 20%;
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .parceiros img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.15);
-  }
-
-  .parceiros {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 100%;
-    height: fit-content;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .content {
-    padding-bottom: 0;
-    padding: 10px;
-    width: 100vw;
-    height: 50vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .nav li {
-    font-size: 1.2em;
-    padding: 0 1em;
-    color: #061D60;
-    text-decoration: none;
-  }
-
-  h1 {
-    display: flex;
-    font-size: 4em;
-    font-weight: bold;
-    justify-content: center;
-    flex-direction: row;
-    color: #0A2B5E;
-    text-shadow: .1em .1em 1em whitesmoke;
-  }
-
-  .content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    justify-content: center;
-    gap: 30px;
-    height: auto;
-    padding: 40px 0;
-  }
-
-  .areas {
-    background-color: #061D60;
-    box-shadow: 50%;
-    font-size: 1em;
-    color: #fff;
-    font-weight: bold;
-    margin: 10px;
-    border-radius: 10px;
-    width: fit-content;
-    height: fit-content;
-    box-shadow: .35em .35em .5em whitesmoke;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .areas:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-  }
-
-  .servicos {
-    width: 100vw;
-    height: 50vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .servicos_titulo {
-    display: flex;
-    padding-top: 30em;
-    font-size: 1em;
-    font-weight: bold;
-    justify-content: center;
-    flex-direction: row;
-    color: #061D60;
-    text-shadow: .1em .1em 1em whitesmoke;
-  }
-
-  .servicos_ensino {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(imagens/ensino.jpeg);
-    background-size: cover;
-    background-position: center;
-    margin: 2em;
-    border-radius: 10px;
-    width: 35vw;
-    height: 35vh;
-    color: #ffffff;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
-    box-shadow: .35em .35em .5em whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .servicos_ensino p {
-    font-weight: bold;
-    font-size: 2em;
-    letter-spacing: 1px;
-  }
-
-  .servicos_bolsas {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(imagens/bolsas.jpg);
-    background-size: cover;
-    background-position: center;
-    margin: 2em;
-    border-radius: 10px;
-    width: 35vw;
-    height: 35vh;
-    color: #ffffff;
-    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9);
-    box-shadow: .35em .35em .5em whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-
-  .servicos_bolsas p {
-    font-weight: bold;
-    font-size: 2em;
-    letter-spacing: 1px;
-  }
-
-  .servicos_ensino:hover,
-  .servicos_bolsas:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-  }
-
-  .contactos {
-    margin-left: 2em;
-    margin-top: 5em;
-    width: 100;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-  }
-
-  .contactos p {
-    padding: 2em;
-    font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50px;
-    color: #061D60;
-  }
-
-  .contactos img {
-    min-width: 20%;
-    height: auto;
-    margin-right: 1em;
-  }
-
-  .contactos_form {
-    background-color: #fff;
-    border-radius: 20px;
-    max-width: max-content;
-    display: flex;
-    align-items: center;
-    margin-right: 2.5em;
-  }
-
-  .contactos_form input[type=submit],
-  label {
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-  }
-
-  .contactos label {
-    padding-top: 20px;
-  }
-
-  .footer {
-    background-color: rgb(255, 255, 255, 0.65);
-    font-size: 1em;
-    color: #061D60;
-    margin: 0;
-    padding-top: 1em;
-    width: 100%;
-  }
-
-  footer p {
-    margin: 0;
-  }
-
-  .referencia {
+.referencia {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .direitos {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-  }
+    margin-bottom: 1rem;
 }
 
-/* ========== NOVOS ESTILOS (interatividade) ========== */
+.politicas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.politicas a {
+    color: #061D60;
+    text-decoration: none;
+}
+
+.politicas a:hover {
+    text-decoration: underline;
+}
+
+/* ========== ELEMENTOS INTERATIVOS ========== */
 .btn-saber-mais {
-  background-color: #061D60;
-  color: white;
-  border: none;
-  padding: 0.6em 1.2em;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 0 1.5em 2em;
-  font-size: 0.9em;
-  transition: background-color 0.2s;
+    background-color: #061D60;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem 0 0 0;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    display: inline-block;
 }
 
 .btn-saber-mais:hover {
-  background-color: #3964e7;
+    background-color: #3964e7;
 }
 
 #scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #061D60;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  display: none;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #061D60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
 }
 
 #scroll-to-top:hover {
-  background-color: #3964e7;
+    background-color: #3964e7;
 }
 
 .error {
-  color: #d32f2f;
-  font-size: 0.8em;
-  display: block;
-  margin-top: 0.2em;
+    color: #d32f2f;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.2rem;
 }
 
 .success {
-  color: #2e7d32;
-  font-weight: bold;
-  margin: 1em 0;
-  padding: 0.5em;
-  background-color: #e8f5e9;
-  border-radius: 4px;
+    color: #2e7d32;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background-color: #e8f5e9;
+    border-radius: 4px;
 }
 
-/* ADICIONA AQUI OS NOVOS ESTILOS PARA CAMPOS COM ERRO */
 .contactos_form input.input-error,
 .contactos_form select.input-error,
 .contactos_form textarea.input-error {
@@ -789,15 +507,225 @@ footer p {
     box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
 }
 
-/* Animação fade-in ao scroll */
 .fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
+/* ========== MENU HAMBÚRGUER PARA MOBILE ========== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #061D60;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav li a {
+        display: block;
+        padding: 0.8rem;
+        white-space: normal;
+    }
+
+    .nav li a:hover {
+        border-bottom: none;
+        background-color: rgba(57, 100, 231, 0.1);
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (min-width: 768px) {
+    .container {
+        padding: 1rem 2rem;
+    }
+
+    .nav li {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .missao {
+        margin: 3rem 2rem;
+    }
+
+    .missao p {
+        font-size: 1.1rem;
+    }
+
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem;
+    }
+
+    .areas {
+        max-width: 350px;
+        min-height: 220px;
+    }
+
+    .servicos {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .servicos_ensino,
+    .servicos_bolsas {
+        width: 45%;
+        max-width: 400px;
+    }
+
+    .contactos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .contactos p {
+        flex: 0 1 300px;
+    }
+
+    .contactos img {
+        flex: 0 1 200px;
+    }
+
+    .contactos_form {
+        flex: 0 1 100%;
+    }
+
+    .politicas {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .grafico-container {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 1rem 3rem;
+    }
+
+    .nav li {
+        font-size: 1.1rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .missao {
+        margin: 4rem 3rem;
+    }
+
+    .content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .areas {
+        max-width: 280px;
+    }
+
+    .servicos_ensino,
+    .servicos_bolsas {
+        height: 300px;
+    }
+
+    .contactos {
+        flex-wrap: nowrap;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+
+    .contactos p {
+        flex: 0 1 350px;
+    }
+
+    .contactos img {
+        flex: 0 1 250px;
+    }
+
+    .contactos_form {
+        flex: 0 1 450px;
+    }
+
+    .grafico-container {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .content {
+        gap: 3rem;
+    }
+
+    .areas {
+        max-width: 320px;
+    }
+}
+
+/* ========== SCROLL MARGIN PARA HEADER FIXO ========== */
+#Missao,
+#Area\ de\ investigacao,
+#Servicos,
+#Parceiros,
+#Contactos {
+    scroll-margin-top: 90px;
+}
