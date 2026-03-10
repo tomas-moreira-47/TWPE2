@@ -71,36 +71,45 @@ document.addEventListener('DOMContentLoaded', function () {
         erroAssunto.textContent = '';
         erroMensagem.textContent = '';
         successDiv.style.display = 'none';
+        
+        // REMOVER CLASSES DE ERRO
+        [nome, email, assunto, mensagem].forEach(campo => {
+            campo.classList.remove('input-error');
+        });
 
         // Nome
         if (nome.value.trim() === '') {
             erroNome.textContent = 'O nome é obrigatório.';
+            nome.classList.add('input-error');
             valido = false;
         }
 
         // Email
         if (email.value.trim() === '') {
             erroEmail.textContent = 'O email é obrigatório.';
+            email.classList.add('input-error');
             valido = false;
         } else if (!validarEmail(email.value.trim())) {
             erroEmail.textContent = 'Introduza um email válido (ex: nome@dominio.pt).';
+            email.classList.add('input-error');
             valido = false;
         }
 
         // Assunto
         if (assunto.value === '') {
             erroAssunto.textContent = 'Selecione uma opção.';
+            assunto.classList.add('input-error');
             valido = false;
         }
 
         // Mensagem
         if (mensagem.value.trim() === '') {
             erroMensagem.textContent = 'A mensagem não pode estar vazia.';
+            mensagem.classList.add('input-error');
             valido = false;
         }
 
         if (valido) {
-            // Submissão bem-sucedida
             successDiv.style.display = 'block';
             form.reset();
             setTimeout(() => {
@@ -108,11 +117,63 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 5000);
         }
     });
-
     // GRÁFICO D3
     desenharGrafico();
+    
+    
+    // Validação do formulário em tempo real
+    [nome, email, assunto, mensagem].forEach(campo => {
+        campo.addEventListener('blur', function() {
+            validarCampo(this);
+        });
+    
+        campo.addEventListener('input', function() {
+            // Remover erro enquanto o utilizador corrige
+            const errorSpan = document.getElementById(`error-${this.id}`);
+            errorSpan.textContent = '';
+            this.classList.remove('input-error');
+        });
+    });
 
-});
+    function validarCampo(campo) {
+        const errorSpan = document.getElementById(`error-${campo.id}`);
+    
+        if (campo.id === 'nome' && campo.value.trim() === '') {
+            errorSpan.textContent = 'O nome é obrigatório.';
+            campo.classList.add('input-error');
+            return false;
+        }
+    
+        if (campo.id === 'email') {
+            if (campo.value.trim() === '') {
+                errorSpan.textContent = 'O email é obrigatório.';
+                campo.classList.add('input-error');
+                return false;
+            } else if (!validarEmail(campo.value.trim())) {
+                errorSpan.textContent = 'Introduza um email válido.';
+                campo.classList.add('input-error');
+                return false;
+            }
+        }
+    
+        if (campo.id === 'assunto' && campo.value === '') {
+            errorSpan.textContent = 'Selecione uma opção.';
+            campo.classList.add('input-error');
+            return false;
+        }
+    
+        if (campo.id === 'mensagem' && campo.value.trim() === '') {
+            errorSpan.textContent = 'A mensagem não pode estar vazia.';
+            campo.classList.add('input-error');
+            return false;
+        }
+    
+        errorSpan.textContent = '';
+        campo.classList.remove('input-error');
+        return true;
+    }
+
+    });
 
 function desenharGrafico() {
     // Dados fictícios: número de projetos por área

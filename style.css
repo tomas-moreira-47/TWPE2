@@ -773,6 +773,22 @@ footer p {
   border-radius: 4px;
 }
 
+/* ADICIONA AQUI OS NOVOS ESTILOS PARA CAMPOS COM ERRO */
+.contactos_form input.input-error,
+.contactos_form select.input-error,
+.contactos_form textarea.input-error {
+    border: 2px solid #d32f2f;
+    background-color: #fff8f8;
+    outline: none;
+}
+
+.contactos_form input.input-error:focus,
+.contactos_form select.input-error:focus,
+.contactos_form textarea.input-error:focus {
+    border-color: #b71c1c;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
 /* Animação fade-in ao scroll */
 .fade-in {
   opacity: 0;
@@ -784,3 +800,4 @@ footer p {
   opacity: 1;
   transform: translateY(0);
 }
+
