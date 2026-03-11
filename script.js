@@ -67,19 +67,19 @@ document.addEventListener('DOMContentLoaded', function () {
     elementosFade.forEach(el => observer.observe(el));
 
     // BOTÃO "SABER MAIS"
-    const btnSaberMais = document.getElementById('saber-mais-btn');
-    const extraMissao = document.getElementById('extra-missao');
-    if (btnSaberMais && extraMissao) {
-        btnSaberMais.addEventListener('click', function () {
-            if (extraMissao.style.display === 'none' || !extraMissao.style.display) {
-                extraMissao.style.display = 'block';
-                btnSaberMais.textContent = 'Saber menos';
+    document.querySelectorAll('.btn-saber-mais').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const extra = this.previousElementSibling;
+
+            if (extra.style.display === 'none' || !extra.style.display) {
+                extra.style.display = 'block';
+                this.textContent = 'Saber menos';
             } else {
-                extraMissao.style.display = 'none';
-                btnSaberMais.textContent = 'Saber mais';
+                extra.style.display = 'none';
+                this.textContent = 'Saber mais';
             }
         });
-    }
+    });
 
     // BOTÃO "VOLTAR AO TOPO"
     const btnTopo = document.getElementById('scroll-to-top');
