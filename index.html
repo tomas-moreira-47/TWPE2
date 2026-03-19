@@ -194,15 +194,15 @@
             <form method="post" action="#" id="contactForm" novalidate>
                 <legend>Pedido de Contato</legend>
 
-                <label for="nome"><i class="fas fa-user"></i> Nome</label>
+                <label for="nome"><i class="fas fa-user"></i> Nome*</label>
                 <input type="text" name="nome" id="nome" placeholder="O seu nome completo" required>
                 <span class="error" id="error-nome" aria-live="polite"></span>
 
-                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <label for="email"><i class="fas fa-envelope"></i> Email*</label>
                 <input type="email" name="email" id="email" placeholder="exemplo@dominio.com" required>
                 <span class="error" id="error-email" aria-live="polite"></span>
 
-                <label for="telefone"><i class="fas fa-phone"></i> Telemóvel</label>
+                <label for="telefone"><i class="fas fa-phone"></i> Telemóvel*</label>
                 <div class="telefone-group">
                     <select id="codigo-pais" name="codigo-pais" class="codigo-pais" required>
                         <option value="+351" selected>🇵🇹 +351</option>
@@ -223,7 +223,7 @@
                 </div>
                 <span class="error" id="error-telefone" aria-live="polite"></span>
 
-                <label for="assunto"><i class="fas fa-tag"></i> Assunto Principal</label>
+                <label for="assunto"><i class="fas fa-tag"></i> Assunto Principal*</label>
                 <select name="assunto" id="assunto" required>
                     <option value="">Selecione um assunto</option>
                     <option value="saude">Saúde</option>
@@ -234,13 +234,13 @@
                 </select>
                 <span class="error" id="error-assunto" aria-live="polite"></span>
 
-                <label for="subassunto"><i class="fas fa-tags"></i> Título do Assunto</label>
+                <label for="subassunto"><i class="fas fa-tags"></i> Título do Assunto*</label>
                 <select name="subassunto" id="subassunto" required>
                     <option value="">Primeiro selecione um assunto</option>
                 </select>
                 <span class="error" id="error-subassunto" aria-live="polite"></span>
 
-                <label for="mensagem"><i class="fas fa-comment"></i> Mensagem</label>
+                <label for="mensagem"><i class="fas fa-comment"></i> Mensagem*</label>
                 <textarea name="mensagem" id="mensagem" rows="5" placeholder="Escreva a sua mensagem aqui..." required></textarea>
                 <span class="error" id="error-mensagem" aria-live="polite"></span>
 
