@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro Académico Clínico dos Açores</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="background">
 <header>
@@ -21,47 +23,87 @@
 </header>
 
 <main>
+    <!-- CARROSSEL DE IMAGENS -->
+    <div class="carrossel-container">
+        <div class="carrossel">
+            <div class="carrossel-slide active">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="img1 - Inovação médica">
+                <div class="carrossel-caption">Inovação em Saúde</div>
+            </div>
+            <div class="carrossel-slide">
+                <img src="https://images.pexels.com/photos/7089628/pexels-photo-7089628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img2 - Telemedicina">
+                <div class="carrossel-caption">Telemedicina</div>
+            </div>
+            <div class="carrossel-slide">
+                <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="img3 - Investigação">
+                <div class="carrossel-caption">Investigação Clínica</div>
+            </div>
+            <div class="carrossel-slide">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="img4 - IA em medicina">
+                <div class="carrossel-caption">Inteligência Artificial</div>
+            </div>
+            <div class="carrossel-slide">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="img5 - Equipa médica">
+                <div class="carrossel-caption">Equipa Multidisciplinar</div>
+            </div>
+            <div class="carrossel-slide">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="img6 - Centro de investigação">
+                <div class="carrossel-caption">Centro de Investigação</div>
+            </div>
+        </div>
+        <button class="carrossel-prev" aria-label="Anterior">&#10094;</button>
+        <button class="carrossel-next" aria-label="Próximo">&#10095;</button>
+        <div class="carrossel-indicadores"></div>
+    </div>
+
+    <!-- SEÇÕES MISSÃO, VISÃO, ENQUADRAMENTO -->
     <div class="missao fade-in" id="missao1">
         <h1 id="Missao">Missão</h1>
         <p>O CACA tem como propósito melhorar a saúde e a assistência médica para os habitantes da região autónoma dos Açores através das suas investigações.</p>
-        <p id="extra-missao" style="display: none;">Além disso, colaboramos com instituições internacionais para trazer as melhores práticas e tecnologias para a região, promovendo a inovação e a excelência.</p>
-        <button id="saber-mais-btn" class="btn-saber-mais">Saber mais</button>
+        <p id="extra-missao" style="display: none;">A nossa missão estende-se à promoção da literacia em saúde, ao desenvolvimento de programas de prevenção de doenças e à implementação de práticas inovadoras que garantam cuidados de saúde de excelência. Trabalhamos em estreita colaboração com as comunidades locais para identificar necessidades específicas e desenvolver soluções personalizadas que respeitem as características únicas de cada ilha. Através de parcerias estratégicas, trazemos conhecimento global para aplicar localmente, sempre com o objetivo de elevar a qualidade de vida dos açorianos.</p>
+        <button class="btn-saber-mais">Saber mais</button>
     </div>
 
     <div class="missao fade-in">
         <h1>Visão</h1>
         <p>Pretendemos ser uma referência na inovação médica.</p>
-        <p style="display:none;">O nosso Centro pretende mostrar que a deslocalização não seja um obstáculo à excelência e ao esforço nos estudos e formações.</p>
+        <p style="display:none;">A nossa visão é posicionar os Açores como um polo de excelência em investigação clínica e inovação em saúde no contexto atlântico. Ambicionamos criar um ecossistema onde a investigação translacional flua do laboratório para a prática clínica de forma ágil, beneficiando diretamente os pacientes. Queremos ser reconhecidos internacionalmente pela qualidade da nossa produção científica, pela formação avançada de profissionais de saúde e pela implementação de modelos de cuidados inovadores que sirvam de exemplo para regiões insulares e remotas em todo o mundo.</p>
         <button class="btn-saber-mais">Saber mais</button>
     </div>
 
     <div class="missao fade-in">
         <h1>Enquadramento na região</h1>
         <p>O CACA nasce da necessidade de unir o Serviço Regional de Saúde e a Universidade dos Açores.</p>
-        <p style="display:none;">De modo a haver uma ligação mais efetiva entre as nossas ilhas e desenvolver uma melhor formação insular.</p>
+        <p style="display:none;">Esta união visa superar os desafios impostos pela dispersão geográfica das nove ilhas, criando uma rede integrada de investigação e cuidados de saúde. O arquipélago dos Açores apresenta características demográficas e epidemiológicas únicas, que exigem soluções adaptadas ao contexto insular. O CACA funciona como ponte entre o conhecimento académico e a prática clínica, promovendo estudos que abordam problemáticas específicas da região, como doenças genéticas com prevalência aumentada, impacto das alterações climáticas na saúde e desenvolvimento de soluções de telemedicina para garantir equidade no acesso aos cuidados. A nossa localização privilegiada no Atlântico permite-nos também estabelecer colaborações estratégicas com outros territórios insulares e com instituições de saúde de países lusófonos.</p>
         <button class="btn-saber-mais">Saber mais</button>
+    </div>
+
+    <!-- ANIMAÇÃO 3D THREE.JS -->
+    <div id="canvas-container" class="three-d-container">
+        <h2>Inovação em Movimento</h2>
+        <div id="three-canvas"></div>
     </div>
 
     <h1 id="Area de investigacao" class="investigacao">Área de investigação</h1>
     <div class="content">
         <div class="areas fade-in">
-            <h2>Telemedicina</h2>
-            <p>Prestação de serviços à distância permitindo consultas e acompanhamento médicos remotos.</p>
+            <h2><i class="fas fa-video"></i> Telemedicina</h2>
+            <p>Prestação de serviços à distância permitindo consultas e acompanhamento médicos remotos, garantindo acesso a especialistas independentemente da localização geográfica.</p>
         </div>
         <div class="areas fade-in">
-            <h2>E-saúde</h2>
-            <p>Uso de tecnologias de informação e comunicação para obter diagnósticos mais aprimorados.</p>
+            <h2><i class="fas fa-laptop-medical"></i> E-saúde</h2>
+            <p>Uso de tecnologias de informação e comunicação para obter diagnósticos mais aprimorados, gestão eficiente de dados clínicos e monitorização contínua de pacientes.</p>
         </div>
         <div class="areas fade-in">
-            <h2>IA em medicina</h2>
-            <p>A utilização de inteligência artificial para analisar dados clínicos permitindo diagnósticos rápidos.</p>
+            <h2><i class="fas fa-robot"></i> IA em medicina</h2>
+            <p>A utilizaçãn de inteligência artificial para analisar dados clínicos permitindo diagnósticos rápidos, predição de surtos e personalização de tratamentos.</p>
         </div>
         <div class="areas fade-in">
-            <h2>Epidemiologia</h2>
-            <p>A área de estudo sobre as doenças e a sua propagação. Focamo-nos na prevenção e controle destes problemas.</p>
+            <h2><i class="fas fa-chart-line"></i> Epidemiologia</h2>
+            <p>A área de estudo sobre as doenças e a sua propagação. Focamo-nos na prevenção e controle destes problemas através de modelos preditivos e estudos populacionais.</p>
         </div>
     </div>
-    
+
     <!-- GRÁFICO D3 -->
     <div class="grafico-container">
         <h2>Distribuição de Projetos por Área</h2>
@@ -71,64 +113,167 @@
     <div class="servicos_titulo">
         <h1 id="Servicos">Serviços</h1>
     </div>
-    <div class="servicos">
+    <div class="servicos-flex">
         <div class="servicos_ensino fade-in">
-            <p>Ensino</p>
+            <p><i class="fas fa-chalkboard-teacher"></i> Ensino</p>
         </div>
         <div class="servicos_bolsas fade-in">
-            <p>Bolsas de investigação</p>
+            <p><i class="fas fa-graduation-cap"></i> Bolsas de investigação</p>
         </div>
     </div>
 
     <br>
     <h1 id="Parceiros">Parceiros</h1>
-    <div class="parceiros fade-in">
-        <img src="imagens/uni_coimbra_logo.png" alt="Logotipo da Universidade de Coimbra">
-        <img src="imagens/cuf_logo.png" alt="Logotipo da CUF">
-        <img src="imagens/uac_logo.png" alt="Logotipo da UAC">
-        <img src="imagens/coa_logo.png" alt="Logotipo da COA">
+    <div class="parceiros-grid fade-in">
+        <div class="parceiro-card">
+            <a href="https://www.uc.pt" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/uni_coimbra_logo.png" alt="Logotipo da Universidade de Coimbra">
+            </a>
+            <div class="parceiro-info">
+                <h3>Universidade de Coimbra</h3>
+                <p>Instituição de ensino superior portuguesa, fundada em 1290, é uma das universidades mais antigas da Europa e referência mundial em investigação científica, incluindo na área da saúde e medicina.</p>
+            </div>
+        </div>
+
+        <div class="parceiro-card">
+            <a href="https://www.cuf.pt" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/cuf_logo.png" alt="Logotipo da CUF">
+            </a>
+            <div class="parceiro-info">
+                <h3>CUF</h3>
+                <p>Maior rede de hospitais privados de Portugal, com mais de 75 anos de história. Referência em cuidados de saúde de excelência, inovação clínica e investigação médica aplicada.</p>
+            </div>
+        </div>
+
+        <div class="parceiro-card">
+            <a href="https://www.uac.pt" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/uac_logo.png" alt="Logotipo da UAC">
+            </a>
+            <div class="parceiro-info">
+                <h3>Universidade dos Açores</h3>
+                <p>Instituição de ensino superior pública dos Açores, fundada em 1976. Desempenha um papel fundamental no desenvolvimento científico, cultural e económico da região, com forte atuação nas ciências da saúde.</p>
+            </div>
+        </div>
+
+        <div class="parceiro-card">
+            <a href="https://portal.azores.gov.pt/web/coa" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/coa_logo.png" alt="Logotipo da COA">
+            </a>
+            <div class="parceiro-info">
+                <h3>Centro de Oncologia dos Açores</h3>
+                <p>Instituição de referência no tratamento oncológico na Região Autónoma dos Açores, dedicada à prestação de cuidados especializados, investigação e prevenção do cancro no arquipélago.</p>
+            </div>
+        </div>
     </div>
     <br><br><br>
 
-    <!-- CONTACTOS + FORMULÁRIO  -->
+    <!-- CONTACTOS + FORMULÁRIO MELHORADO -->
     <h1 id="Contactos">Contactos</h1>
-    <div class="contactos">
-        <p><strong>Centro Académico Clínico dos Açores</strong>
-            <br><br>Telefone: 987654321
-            <br><br>Email: caca@azores.gov.pt
-            <br><br>Rua Clarimunda Nº 67
-            <br><br>Código-Postal:9500-567
-        </p>
-        <img src="imagens/smiguel.png" alt="Representação do CACA na ilha de São Miguel">
+    <div class="contactos-layout">
+        <!-- Elemento decorativo esquerdo -->
+        <div class="contacto-info-side">
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt fa-2x"></i>
+                <h3>Morada</h3>
+                <p>Rua Clarimunda Nº 67<br>9500-567 Ponta Delgada</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-phone-alt fa-2x"></i>
+                <h3>Telefone</h3>
+                <p>+351 987 654 321</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-envelope fa-2x"></i>
+                <h3>Email</h3>
+                <p>caca@azores.gov.pt</p>
+            </div>
+        </div>
+
+        <!-- Formulário central -->
         <div class="contactos_form">
             <form method="post" action="#" id="contactForm" novalidate>
-                <legend>Contactar</legend>
+                <legend>Pedido de Contato</legend>
 
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome" required>
+                <label for="nome"><i class="fas fa-user"></i> Nome</label>
+                <input type="text" name="nome" id="nome" placeholder="O seu nome completo" required>
                 <span class="error" id="error-nome" aria-live="polite"></span>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" name="email" id="email" placeholder="exemplo@dominio.com" required>
                 <span class="error" id="error-email" aria-live="polite"></span>
 
-                <label for="assunto">Assunto</label>
+                <label for="telefone"><i class="fas fa-phone"></i> Telemóvel</label>
+                <div class="telefone-group">
+                    <select id="codigo-pais" name="codigo-pais" class="codigo-pais" required>
+                        <option value="+351" selected>🇵🇹 +351</option>
+                        <option value="+34">🇪🇸 +34</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+39">🇮🇹 +39</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+55">🇧🇷 +55</option>
+                        <option value="+244">🇦🇴 +244</option>
+                        <option value="+238">🇨🇻 +238</option>
+                        <option value="+245">🇬🇼 +245</option>
+                        <option value="+239">🇸🇹 +239</option>
+                        <option value="+258">🇲🇿 +258</option>
+                    </select>
+                    <input type="tel" name="telefone" id="telefone" placeholder="123 456 789" required>
+                </div>
+                <span class="error" id="error-telefone" aria-live="polite"></span>
+
+                <label for="assunto"><i class="fas fa-tag"></i> Assunto Principal</label>
                 <select name="assunto" id="assunto" required>
-                    <option value="">Escolha uma opção</option>
+                    <option value="">Selecione um assunto</option>
                     <option value="saude">Saúde</option>
                     <option value="formacao">Formação</option>
                     <option value="ensino">Ensino</option>
+                    <option value="investigacao">Investigação</option>
+                    <option value="parcerias">Parcerias</option>
                 </select>
                 <span class="error" id="error-assunto" aria-live="polite"></span>
 
-                <label for="mensagem">Mensagem</label>
-                <textarea name="mensagem" id="mensagem" rows="5" required></textarea>
+                <label for="subassunto"><i class="fas fa-tags"></i> Título do Assunto</label>
+                <select name="subassunto" id="subassunto" required>
+                    <option value="">Primeiro selecione um assunto</option>
+                </select>
+                <span class="error" id="error-subassunto" aria-live="polite"></span>
+
+                <label for="mensagem"><i class="fas fa-comment"></i> Mensagem</label>
+                <textarea name="mensagem" id="mensagem" rows="5" placeholder="Escreva a sua mensagem aqui..." required></textarea>
                 <span class="error" id="error-mensagem" aria-live="polite"></span>
 
-                <div id="form-success" class="success" style="display:none;" role="alert">Mensagem enviada com sucesso!</div>
+                <div id="form-success" class="success" style="display:none;" role="alert">
+                    <i class="fas fa-check-circle"></i> Mensagem enviada com sucesso!
+                </div>
 
-                <p><input type="submit" value="Enviar"></p>
+                <p><input type="submit" value="Enviar Mensagem"></p>
             </form>
+        </div>
+
+        <!-- Elemento decorativo direito -->
+        <div class="contacto-info-side">
+            <div class="info-card">
+                <i class="fas fa-clock fa-2x"></i>
+                <h3>Horário</h3>
+                <p>Segunda a Sexta<br>09:00 - 18:00</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-map-marked-alt fa-2x"></i>
+                <h3>Localização</h3>
+                <p>Ver no mapa</p>
+                <a href="#" class="map-link"><i class="fas fa-external-link-alt"></i> Google Maps</a>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-share-alt fa-2x"></i>
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -147,8 +292,21 @@
         <a href="#" title="Privacidade e Termos em breve">Privacidade e Termos</a>
     </div>
 </footer>
-<!--D3.JS Library-->
+
+<!-- Bibliotecas -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- NOVOS SCRIPTS MODULARIZADOS (ORDEM CORRETA) -->
+<script src="js/utils/constants.js"></script>
+<script src="js/utils/validadores.js"></script>
+<script src="js/classes/Projeto.js"></script>
+<script src="js/classes/Parceiro.js"></script>
+<script src="js/classes/Mensagem.js"></script>
+<script src="js/modules/carrossel.js"></script>
+<script src="js/modules/grafico.js"></script>
+<script src="js/modules/threeAnimacao.js"></script>
+<script src="js/modules/formulario.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
