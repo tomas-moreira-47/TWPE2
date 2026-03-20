@@ -6,8 +6,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
-
-    console.log('🚀 Aplicação CACA iniciada');
+    
 
     // Inicializar componentes de UI
     iniciarMenuHamburguer();
